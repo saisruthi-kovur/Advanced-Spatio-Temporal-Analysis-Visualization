@@ -1,4 +1,4 @@
-# Advanced Spatio-temporal Analysis & Visualization of Rainfall Dynamics in Washington State
+# Advanced Spatio-Temporal Analysis & Visualization of Rainfall Dynamics in Washington State
 
 ## Rainfall Dynamics in Washington State
 
