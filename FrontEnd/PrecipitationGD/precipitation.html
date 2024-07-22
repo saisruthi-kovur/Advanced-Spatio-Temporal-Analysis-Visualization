@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Washington'19 Precipitation Overview using Gradient Boosting</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+    body {
+        background-image: url('../image.png'); 
+        background-size: cover;
+        background-attachment: fixed;
+        color: #F0F8FF; /* Light blue font color */
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-align: center;
+    }
+
+    .map-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 15px;
+    }
+
+    .map-container > div {
+        width: 49%; /* Assign width to the container of each map and its label */
+        text-align: center; /* Center the label text */
+    }
+
+    #actual-map, #predicted-map {
+        height: 500px;
+        width: 100%;
+        border: 1px solid #fff;
+        border-radius: 5px;
+    }
+
+    .map-label {
+        margin-top: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #F0F8FF; /* Adjust the color as needed */
+    }
+
+    #actual-map:hover, #predicted-map:hover {
+            border-color: #4CAF50; /* Green border on hover */
+        }
+
+    #date-display {
+        font-size: 15px;
+        margin: 10px 0;
+    }
+
+    .content {
+        background-color: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+        padding: 0.5px;
+        margin: 30px auto;
+        width: 90%; /* Slightly wider */
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Soft shadow */
+        transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+    }
+
+    .content:hover {
+        transform: scale(1.02); /* Slight scale on hover */
+        background-color: rgba(0, 0, 0, 0.8); /* Darken background on hover */
+    }
+
+    .back-button {
+        background-color: #7DA2A9;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 17px;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .back-button:hover, .back-button:focus {
+        transform: scale(1.1);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        background-color: #6D9197;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-top: 20px;
+        color: #F0F8FF;
+    }
+
+</style>
+</head>
+<body>
+    <h1>Washington'19 Precipitation Overview using Gradient Boosting</h1>
+    <div class="content">
+        <div class="map-container">
+            <div>
+                <div id="actual-map"></div>
+                <div class="map-label">Original</div> <!-- Label for the actual map -->
+            </div>
+            <div>
+                <div id="predicted-map"></div>
+                <div class="map-label">Predicted</div> <!-- Label for the predicted map -->
+            </div>
+        </div>
+        <div id="date-display"></div>
+        <input type="range" id="time-slider" min="0" max="1" value="0">
+    </div>
+
+    <a href="../index.html" class="back-button">Back to Homepage</a>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="precipitation.js"></script> <!-- Your JavaScript file -->
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rainfall Dynamics in Washington State</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('FrontEnd/image.png'); 
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes scaleUp {
+            0% { transform: scale(0.8); }
+            100% { transform: scale(1); }
+        }
+
+        .title {
+            font-size: 2.5em;
+            color: #F0F8FF;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            animation: fadeInOut 4s ease-in-out, scaleUp 4s ease-in forwards;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+            z-index: -1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="background-overlay"></div> <!-- Dark overlay for better text visibility -->
+    <div class="title">Washington's Rainfall Dynamics Visualization</div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = 'Frontend/index.html'; // Redirect to the main page after 3.5 seconds
+        }, 3500);
+    </script>
+</body>
+</html>
